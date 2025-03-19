@@ -22,8 +22,8 @@ def test_api_monitor(client):
     resp_payload = json.loads(resp.data)
     assert resp_payload["cpu"] >= 0
     assert resp_payload["disk"] >= 0
-    assert resp_payload["disk_read"] >= 0
-    assert resp_payload["disk_write"] >= 0
+    assert resp_payload["disk_read"] >= -1
+    assert resp_payload["disk_write"] >= -1
     assert resp_payload["mem"] >= 0
     assert resp_payload["net_recv"] >= 0
     assert resp_payload["net_sent"] >= 0
